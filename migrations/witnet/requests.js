@@ -3,6 +3,12 @@ const retrievals = new Witnet.Dictionary(Witnet.Retrievals.Class, require("../..
 const templates = new Witnet.Dictionary(Witnet.Artifacts.Template, require("../../assets/witnet/templates"))
 
 module.exports = {
+    ordinals_floor_price: {
+        WitnetRequestPriceBitcoinpunksBtc0: Witnet.RequestFromTemplate(
+            templates['WitnetRequestTemplateOrdinalsWalletFloorPrice'],
+            [["bitcoinpunks"]],
+        ),
+    },
     price_feeds: {
         WitnetRequestPriceAdaUsd6: Witnet.PriceTickerRequest(
             retrievals, { 
